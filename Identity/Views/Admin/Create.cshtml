@@ -1,0 +1,57 @@
+﻿@model User
+@{
+    ViewData["Title"] = "CREATE USER";
+}
+<div class="text-center">
+    <h1 class=" text-primary p-3"> User Registration Form </h1>
+    
+</div>
+
+<div asp-validation-summary="All" class="text-danger" style="margin-left: 280px"></div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+
+            <form method="post">
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" placeholder="Enter Your Name" class="form-control" autocomplete="off" />
+                </div>
+                <div class="form-group">
+                    <label  asp-for="Email"></label>
+                    <input asp-for="Email" placeholder="Enter Your Email" class="form-control" autocomplete="off" />
+                </div>
+                <div class="form-group">
+                    <label  asp-for="Password"></label>
+                    <input asp-for="Password" placeholder="Enter Your Password" class="form-control" autocomplete="off" />
+                </div>
+                 <div class="form-group">
+                    <label asp-for="Age"></label>
+                    <input asp-for="Age" placeholder="Enter Your Age" class="form-control" autocomplete="off" />
+                </div>
+                
+                <div class="form-group">
+                    <label asp-for="Country"></label>
+                    <select asp-for="Country" placeholder="Select Your Country" class="form-control" asp-items="@new SelectList(Enum.GetNames(typeof(Country)))">
+                        <option selected disabled value="Select">Select Country</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <input type="submit" class=" btn btn-outline-primary btn-lg mb-1 float-right mt-3 " value="Register" />
+                </div>
+               
+                
+            </form>
+            <div>
+
+                <button class="btn btn-outline-primary" onclick="location.href='@Url.Action("Login", "Account")'">Already A User?</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>

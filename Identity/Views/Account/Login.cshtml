@@ -1,0 +1,34 @@
+﻿@model Login
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="text-center">
+    <h1 class="text-primary p-3"> Login </h1>
+    
+</div>
+<div class="text-danger" asp-validation-summary="All" style="margin-left:280px"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+
+            <form asp-action="Login" method="post">
+            <input type="hidden" asp-for="ReturnUrl" />
+        <div class="form-group">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label  asp-for="Password"></label>
+            <input type="password" asp-for="Password" class="form-control" />
+        </div>
+                <button class="btn btn-outline-primary mt-3" type="submit">Log In</button>
+</form>
+<br />
+            <button class="btn btn-outline-primary" onclick="location.href='@Url.Action("Create", "Admin")'">Register</button>
+
+        </div>
+    </div>
+</div>
+

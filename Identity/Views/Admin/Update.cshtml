@@ -1,0 +1,32 @@
+﻿@model AppUser
+@{
+    ViewData["Title"] = "UPDATE USER";
+}
+
+<h1 class="bg-white text-primary"><center>Update User</center></h1>
+<a asp-action="Index" class="btn btn-primary">Back</a>
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-action="Update" method="post">
+    <div class="form-group">
+        <label asp-for="Id"></label>
+        <input asp-for="Id" class="form-control" disabled />
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+ 
+    <div class="form-group">
+        <label asp-for="Age"></label>
+        <input asp-for="Age" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Country"></label>
+        <select asp-for="Country" class="form-control" asp-items="@new SelectList(Enum.GetNames(typeof(Country)))">
+            <option selected disabled value="Select">Select Country</option>
+        </select>
+    </div>
+    
+    <button type="submit" class="btn btn-primary mt-2">Save</button>
+</form>

@@ -1,0 +1,26 @@
+﻿@model TwoFactor
+
+@{
+    ViewData["Title"] = "Login Two Step";
+}
+
+<div class="container">
+<div class="row">
+    <div class="col-6 offset-3">
+
+            <h1 class="text-primary"> Two Factor Authentication </h1>
+        <div class="text-danger" asp-validation-summary="All"></div>
+
+        <p>Check your mailbox for the code</p>
+
+        <form asp-action="LoginTwoStep" method="post">
+            <div class="form-group">
+                    <input asp-for="TwoFactorCode" class="form-control" autocomplete="off" />
+            </div>
+                <button class="btn btn-outline-primary mt-3" type="submit">Log In</button>
+        </form>
+
+    </div>
+
+</div>
+</div>

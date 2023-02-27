@@ -1,0 +1,18 @@
+﻿@model string
+
+@{
+    ViewData["Title"] = "Authentication";
+}
+
+<h1 class="text-blue ms-4 text-center">WELCOME</h1>
+
+<div class="justify-content-center mt-5 btn-toolbar well">
+    <button class="mx-3 btn btn-outline-primary" onclick="location.href='@Url.Action("Create", "Admin")'">Register</button>
+    <button class="btn btn-outline-primary" onclick="location.href='@Url.Action("Login", "Account")'">Login</button>
+</div>
+
+
+
+
+
+
